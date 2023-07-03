@@ -54,6 +54,11 @@ jobs:
         with:
           name: python-app
           path: .
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+            creds: ${{ secrets.AZURE_CREDENTIALS }}
           
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
@@ -62,3 +67,7 @@ jobs:
           app-name: 'pythongithubactiondeploy'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+
+      - name: 'Logout of Azure CLI'
+        run: |
+          az logout
