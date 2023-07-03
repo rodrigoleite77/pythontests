@@ -61,4 +61,4 @@ jobs:
         with:
           app-name: 'pythongithubactiondeploy'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D91661F6B66F4635B2DC7D2F10B5E75F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
